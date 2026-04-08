@@ -1,67 +1,77 @@
 import os, requests, json, time, sys, random
 from rich.console import Console
-from rich.prompt import Prompt, IntPrompt
+from rich.prompt import Prompt
 from pystyle import Colors, Colorate
 
 # ==========================================
-# 1. API ТОХИРГОО (КОД ДОТОР ХАДГАЛАХ ХЭСЭГ)
+# 1. ТОХИРГОО
 # ==========================================
 API_BASE_URL = "https://kayzennv3.squareweb.app/api"
 API_KEY = "APIKEY38"
 FIREBASE_URL = "https://telmunn-79711-default-rtdb.firebaseio.com/users.json"
 ADMIN_KEY = "0615"
+__CHANNEL__ = "TarganJackChannel"
+
+console = Console()
 
 # ==========================================
-# 2. CPM API CLIENT (КОД ДОТОР БАГТСАН)
+# 2. CPMApiClient (ЧИНИЙ ӨГСӨН БҮТЦЭЭР)
 # ==========================================
 class CPMApiClient:
-    def __init__(self, access_key):
-        self.access_key = access_key
+    def __init__(self):
         self.auth_token = None
 
     def login(self, email, password):
         payload = {"account_email": email, "account_password": password}
-        params = {"api_key": API_KEY}
         try:
-            res = requests.post(f"{API_BASE_URL}/account_login", params=params, json=payload).json()
-            if res.get('ok') or res.get('error') == 0:
-                self.auth_token = res['data'].get('auth')
-                return 0 # Амжилттай
-            return res.get('error', 1)
-        except: return 1
+            res = requests.post(f"{API_BASE_URL}/account_login", params={"api_key": API_KEY}, json=payload).json()
+            msg = str(res.get('message', '')).upper()
+            if res.get('ok') or res.get('error') == 0 or msg == "SUCCESSFUL":
+                # Auth token хадгалах
+                data = res.get('data', {})
+                self.auth_token = data.get('auth') if data.get('auth') else res.get('auth')
+                return 0, "SUCCESSFUL"
+            return 1, res.get('message', 'Login Failed')
+        except: return 1, "Connection Error"
 
-    def get_player_data(self):
-        params = {"auth": self.auth_token, "api_key": API_KEY}
+    # ЧИНИЙ ӨГСӨН: set_rank
+    def set_rank(self, auth_token):
         try:
-            return requests.get(f"{API_BASE_URL}/get_player_data", params=params).json()
-        except: return {"ok": False}
-
-    def set_player_rank(self):
-        payload = {"auth": self.auth_token}
-        params = {"api_key": API_KEY}
-        try:
-            res = requests.post(f"{API_BASE_URL}/set_player_rank", params=params, json=payload).json()
-            return res.get('ok')
+            payload = {"account_auth": auth_token}
+            res = requests.post(f"{API_BASE_URL}/set_rank", params={"api_key": API_KEY}, json=payload).json()
+            return res.get('ok') or res.get('error') == 0
         except: return False
 
-    def set_player_name(self, new_name):
-        payload = {"auth": self.auth_token, "name": new_name}
-        params = {"api_key": API_KEY}
+    # ЧИНИЙ ӨГСӨН: change_email
+    def change_email(self, auth_token, new_email):
         try:
-            res = requests.post(f"{API_BASE_URL}/set_player_name", params=params, json=payload).json()
-            return res.get('ok')
+            payload = {"account_auth": auth_token, "new_email": new_email}
+            res = requests.post(f"{API_BASE_URL}/change_email", params={"api_key": API_KEY}, json=payload).json()
+            return res.get('ok') or res.get('error') == 0
         except: return False
-    
-    # Бусад API функцүүдээ (Email, Pass change) энд нэмж болно...
+
+    # ЧИНИЙ ӨГСӨН: change_password
+    def change_password(self, auth_token, new_password):
+        try:
+            payload = {"account_auth": auth_token, "new_password": new_password}
+            res = requests.post(f"{API_BASE_URL}/change_password", params={"api_key": API_KEY}, json=payload).json()
+            return res.get('ok') or res.get('error') == 0
+        except: return False
+
+    # ЧИНИЙ ӨГСӨН: account_register
+    def register(self, email, password):
+        try:
+            payload = {"account_email": email, "account_password": password}
+            res = requests.post(f"{API_BASE_URL}/account_register", params={"api_key": API_KEY}, json=payload).json()
+            return res.get('ok') or res.get('error') == 0
+        except: return False
 
 # ==========================================
-# 3. ТУСЛАХ ФУНКЦҮҮД (FIREBASE & UI)
+# 3. ТУСЛАХ ФУНКЦҮҮД
 # ==========================================
-console = Console()
-
 def load_db():
     try:
-        response = requests.get(FIREBASE_URL)
+        response = requests.get(FIREBASE_URL, timeout=10)
         return response.json() if response.json() else {}
     except: return {}
 
@@ -76,7 +86,7 @@ def banner():
     print(Colorate.Horizontal(Colors.rainbow, '='*60))
     print(Colorate.Horizontal(Colors.rainbow, '       𝐏𝐋𝐄𝐀𝐒𝐄 𝐋𝐎𝐆𝐎𝐔𝐓 𝐅𝐑𝐎𝐌 𝐂𝐏𝐌 𝐁𝐄𝐅𝐎𝐑𝐄 𝐔𝐒𝐈𝐍𝐆 𝐓𝐇𝐈𝐒 𝐓𝐎𝐎𝐋'))
     print(Colorate.Horizontal(Colors.rainbow, '    𝐒𝐇𝐀𝐑𝐈𝐍𝐆 𝐓𝐇𝐄 𝐀𝐂𝐂𝐄𝐒𝐒 𝐊𝐄𝐘 𝐈𝐒 𝐍𝐎𝐓 𝐀𝐋𝐋𝐎𝐖𝐄𝐃 𝐀𝐍𝐃 𝐖𝐈𝐋𝐋 𝐁𝐄 𝐁𝐋𝐎𝐂𝐊𝐄𝐃'))
-    print(Colorate.Horizontal(Colors.rainbow, '           𝐓𝐞𝐥𝐞𝐠𝐫𝐚𝐦: @TarganJackChannel 𝐎𝐫 @TarganJackChat'))
+    print(Colorate.Horizontal(Colors.rainbow, f'           𝐓𝐞𝐥𝐞𝐠𝐫𝐚𝐦: @{__CHANNEL__} 𝐎𝐫 @TarganJackChat'))
     print(Colorate.Horizontal(Colors.rainbow, '='*60))
 
 # ==========================================
@@ -85,9 +95,9 @@ def banner():
 def main():
     while True:
         banner()
-        email = Prompt.ask("[?] Account Email")
-        password = Prompt.ask("[?] Account Password", password=True)
-        access_key = Prompt.ask("[?] Access Key")
+        acc_email = Prompt.ask("[bold white][?] Account Email[/bold white]")
+        acc_password = Prompt.ask("[bold white][?] Account Password[/bold white]")
+        access_key = Prompt.ask("[bold white][?] Access Key[/bold white]")
 
         db = load_db()
         user_id_ref = None
@@ -96,51 +106,112 @@ def main():
 
         if not is_unlimited:
             for uid, data in db.items():
-                if data.get('key') == access_key:
+                if str(data.get('key')) == str(access_key):
                     user_id_ref = uid
                     found_data = data
                     break
 
-        # CPMApiClient-ийг дуудах
-        cpm = CPMApiClient(access_key)
-        login_response = cpm.login(email, password)
+        cpm = CPMApiClient()
+        login_res, login_msg = cpm.login(acc_email, acc_password)
 
-        if login_response != 0 or (not is_unlimited and not found_data):
-            banner()
-            print(f"[?] Account Email: {email}\n[?] Account Password: {password}\n[?] Access Key: {access_key}\n")
-            print(Colorate.Horizontal(Colors.red_to_white, "[✘] Trying to Login: TRY AGAIN."))
-            time.sleep(3); continue
+        access_ok = is_unlimited or found_data
         
-        print(Colorate.Horizontal(Colors.green_to_white, "[√] Trying to Login: SUCCESSFUL."))
+        if login_res != 0 or not access_ok:
+            banner()
+            print(f"[?] Account Email: {acc_email}")
+            print(f"[?] Account Password: {acc_password}")
+            print(f"[?] Access Key: {access_key}\n")
+            if not access_ok:
+                print(Colorate.Horizontal(Colors.red_to_white, "[✘] ACCESS KEY БУРУУ!"))
+            else:
+                print(Colorate.Horizontal(Colors.red_to_white, f"[✘] CPM API АЛДАА: {login_msg}"))
+            print(Colorate.Horizontal(Colors.red_to_white, "[!] Note: make sure you filled out the fields !"))
+            time.sleep(4); continue
+        
+        print(Colorate.Horizontal(Colors.green_to_white, f"[√] Trying to Login: SUCCESSFUL."))
         time.sleep(2)
 
         while True:
             banner()
-            current_bal = 999999999 if is_unlimited else found_data.get('balance', 0)
-            print(f"Account Email    : {email}")
-            print(f"Account Password : {password}")
-            bal_display = "Unlimited" if is_unlimited else f"{current_bal:,} ₮"
-            print(Colorate.Horizontal(Colors.green_to_white, f"Balance          : {bal_display}"))
-            print("-" * 40)
+            db = load_db()
+            if not is_unlimited: found_data = db.get(user_id_ref)
             
-            print("1. SET RANK (20.5K) | 2. LOGOUT | 3. EXIT")
-            choice = Prompt.ask("Select")
+            current_bal = 999999999 if is_unlimited else found_data.get('balance', 0)
+            tg_id = "ADMIN" if is_unlimited else found_data.get('telegram_id', 'N/A')
+            bal_txt = "Unlimited" if is_unlimited else f"{current_bal:,} ₮"
 
-            if choice == "2": break
-            if choice == "3": sys.exit()
+            print(f"Account Email    : {acc_email}")
+            print(f"Account password : {acc_password}")
+            print(f"Telegram id      : {tg_id}")
+            print(f"Access key       : {access_key}")
+            print(Colorate.Horizontal(Colors.green_to_white, f"Balance          : {bal_txt}"))
+            print(Colorate.Horizontal(Colors.rainbow, '='*60))
 
-            if choice == "1":
-                cost = 20500
+            print(Colorate.Horizontal(Colors.rainbow, f"{{01}}: SET RANK".ljust(45) + "20.5K"))
+            print(Colorate.Horizontal(Colors.rainbow, f"{{02}}: CHANGE EMAIL".ljust(45) + "15.5K"))
+            print(Colorate.Horizontal(Colors.rainbow, f"{{03}}: CHANGE PASSWORD".ljust(45) + "10.0K"))
+            print(Colorate.Horizontal(Colors.rainbow, f"{{04}}: REGISTER".ljust(45) + "1.0K"))
+            print(Colorate.Horizontal(Colors.rainbow, f"{{05}}: LOGOUT FROM ACCOUNT"))
+            print(Colorate.Horizontal(Colors.rainbow, f"{{06}}: EXIT FROM TOOL"))
+            print(Colorate.Horizontal(Colors.rainbow, '='*60))
+
+            choice = Prompt.ask("\n[bold yellow][?] Select Service[/bold yellow]")
+
+            if choice == "5": break
+            if choice == "6": sys.exit()
+
+            costs = {"1": 20500, "2": 15500, "3": 10000, "4": 1000}
+            if choice in costs:
+                cost = costs[choice]
                 if current_bal >= cost:
-                    if cpm.set_player_rank():
+                    success = False
+                    
+                    if choice == "1": # SET RANK
+                        console.print("[bold cyan][%] Giving you a King Rank...[/bold cyan]")
+                        if cpm.set_rank(cpm.auth_token): success = True
+                    
+                    elif choice == "2": # CHANGE EMAIL
+                        new_e = Prompt.ask("[bold cyan][?] Enter New Email[/bold cyan]")
+                        console.print("[bold cyan][%] Saving your data...[/bold cyan]")
+                        if cpm.change_email(cpm.auth_token, new_e):
+                            acc_email = new_e # Update screen
+                            success = True
+                    
+                    elif choice == "3": # CHANGE PASSWORD
+                        new_p = Prompt.ask("[bold cyan][?] Enter New Password[/bold cyan]")
+                        console.print("[bold cyan][%] Saving your data...[/bold cyan]")
+                        if cpm.change_password(cpm.auth_token, new_p):
+                            acc_password = new_p # Update screen
+                            success = True
+                    
+                    elif choice == "4": # REGISTER
+                        reg_e = Prompt.ask("[bold cyan][?] New Account Email[/bold cyan]")
+                        reg_p = Prompt.ask("[bold cyan][?] New Account Password[/bold cyan]")
+                        console.print("[bold cyan][%] Creating new Account...[/bold cyan]")
+                        if cpm.register(reg_e, reg_p): success = True
+
+                    if success:
                         if not is_unlimited:
                             new_bal = current_bal - cost
                             update_balance(user_id_ref, new_bal)
-                            found_data['balance'] = new_bal
-                        print("SUCCESSFUL!"); time.sleep(2)
+                        
+                        print(Colorate.Horizontal(Colors.green_to_white, "SUCCESSFUL (√)"))
+                        print(Colorate.Horizontal(Colors.rainbow, '='*40))
+                        
+                        answ = Prompt.ask("[bold][?] Do You want to Exit ?", choices=["y", "n"], default="n")
+                        if answ == "y":
+                            print(Colorate.Horizontal(Colors.rainbow, f"Thank You for using our tool, please join @{__CHANNEL__}."))
+                            sys.exit()
+                    else:
+                        print(Colorate.Horizontal(Colors.red_to_white, "FAILED (✘)"))
+                        time.sleep(2)
                 else:
-                    print("INSUFFICIENT BALANCE!"); time.sleep(2)
+                    print(Colorate.Horizontal(Colors.red_to_white, "INSUFFICIENT BALANCE!"))
+                    time.sleep(2)
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except KeyboardInterrupt:
+        sys.exit()
 
