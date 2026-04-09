@@ -1,1 +1,193 @@
-import base64; exec(base64.b64decode('aW1wb3J0IGJhc2U2NDsgZXhlYyhiYXNlNjQuYjY0ZGVjb2RlKCdJeUJGYm1OeWVYQjBaV1FnWW5rZ1UwVlNSVXMyT1FwcGJYQnZjblFnYldGeWMyaGhiQ3g2YkdsaUxHSmhjMlUyTkR0bGVHVmpLRzFoY25Ob1lXd3ViRzloWkhNb2VteHBZaTVrWldOdmJYQnlaWE56S0dKaGMyVTJOQzVpTmpSa1pXTnZaR1VvSjJWS2VuUlBiSFIzUnpCa2VYVTBjek5EU1VsbmQxQmtlbE5VTUhCcGVVRndhVXRDU1haVmVFTkpSVlpLUWtkcmMwbFdSamhEUmpSRFUzaEJhWFZKUWpOQlZrOUZURW81VDFCd09YQlRlalZTYWpWNGExSlVibEpXT0RaS2NYSjJSV053VjNKNlJYRTFTM0o1YTB0eFYweFlaa1pEWjBGUVkwWjFLMUpwSzNOeEszQlFiRk00TjJ4dU1sSnRaMUZXU2tGVVNteFhZelZJUzJscWMzcEhOVkJVTTJSUVpEQXZVRlJQTHl0UE4weHBTakF6VmxndmQxUkxVRFJEU1ZKQlExQlpaM2Q1VW5Cc1ZVdElSMGRGZVc5S1dYaEZjVXRYVFZaTGFHeHFRWHBWTWtWSU5VRlJWMnAzUjBWbWVWVkliRUZTVjJwRmRUWnNRamxWU0dOd2FXTkJlSEJIUVRVMWJGUkROR2hhTjFORlozTnJhbXhKZVU5VlJFZzFkelJ3WVhCRWJrWnVkRWRZU1V4VlNXOVROVVJwU25odFRFRlZla1ZLYjNsb1EydG5ZMnRHV2xOSGFFSlhWVlJyWjJKS05IVkpWRkYwVVRCblEwdHNSV3RQU0dsYVUyODBOR3RGT1dGR015dFFabWhuY1RCT05XaGpWbEJ6TXpSbVFsYzNiR1paZUM5TmFFTnpkek5wTlhobEwzcE5lWGwyUmtkdmVWTkpXRmhxVVdWRVFXSmhkRzlYUjBOdVFUVlVUbEF5YVhsamFTdEZRMGxhWVc5dllVNWFTMEpSUVUxYU9GQk1Temx5TjNWbk9XRnFjR2d6YUZoVFNqWnJVRXBPYUcxcE5uWnhWekZ3WVcxd00yc3lUbXRUUm1aelNqUktkV3RsVGxreE5rZEhhVlphZVhWek0zVjJlVlJFVTBkWFdXeHFhbU5rV2xBNE9VcEhZekZOZW00NU9WQk5hRFpUVUd0RE5rcHBlbXBLUlRGVVVIUmtTM00yUTJsWFdGbEpXbWhzUjI5RGJVRkhWa0puUVdkNWIxRkZjRWxSUTJ0cWNFdERWVVY2U2xGTFoyYzFTMHBYUlVGd1VYRnZSMHN4VWpGWGJqVnFWMWQyY0RjeVowNW1hVGd4U2pBNFJqUmxTVTlhUTFZM1EwSnRjRnBCVG5aeFZUbFNNa2xNT1ROdlVXVndVVEo1TWxWV05VOW9ORXhuZWpaS0syZGhTMEpJUzFWMk5YaHNhRWxDVDJOV1VXSXZabHAzZUUwNE1IRnVNREIwTjJjd05HNVlOMmxUYjFaRlJUWjNRVFp4ZDB4R1lWTlNVbFpxVldwbVZGQjJRemhxUWtwV2EyaHBNRXRWTlZZNVVVdEZjMVpOY0ZKMWMyMU9TWGh4T0ZkSFVrbzVSamxGUTJKNlVtaENSRmxyUm5sSFRqWkpRMlZyUW1kNFVYUnZjWE5oYzNsbE5ITmxVVEIxUjJOclUxbFJNa3hRZW1OUmExcEpVbU01VFdwdGJFODNjMlZXT1VSVlptOUpUMmR4ZURrcldWVjRSak1yVTBvMVMwVmFaRkZSVkRrelp6TkZOWEJKVW1FNFVHMHJVaTlpUzJGVlVrVlRWMjFhVVRWWlZsSXZUM2RHUjFFcmIweGpSMkp4TDNWRlVucFVSMDFDZG14RFRGVnZMMHhyTVc5RE5WZEpNVFJqYm1STWNYQkZlSFJGTlhKRE1uTmlVMHBtVEVnMlMwUlVjQzltTkRaV05VSmFhRlI2WjJ4eEsyaGlSelUwYjNReFExUndPV1pGTmpoVVJrRnpkWGxWYmpORlJFWkliVUZhVFdoS2JIQmpTMVV3WjNoVFlrVnpObUZHTkdoTlpqaEZOM2xOV1dobkwzYzRRMmc0TW5KRFdXSkdXVU5oVEZSaldXbFlkWE5yWjNsVmRXZ3JPVFpFWTNSaGNHVkRWa1IyVWtOcE1rTkRaMFpRUTNwUlZqUkVTbkpYZW04MU1uZFBhRE15VVRkM1ExQnZSVFY2YkZKQlZXaEpNbmxRUVZORWVGaHJXbUZHUVVGUVEwRldjU3RVVFRsRFdrRlZPVUpXY1ZWdlNYazVhRXRLWVZoVVRFbGxjR2hoTUhNNVFWUmpaVWhJTlVGMk5IbFdTSEpXTURCUVFWZGhRVFpDT0doalJ6ZGplRFZUY1RCcFZqa3lXbGcyYVM5WWRqZEtiM296ZEZwNUswNDBOM0JpU0N0SlZ6Y3ZUVUpqUzJaM05XTkJVak5GVVVkVldYZDJORTE1ZFdWR0t5dGplRTFLYzAxdk9XbE5XbFZzWms5UGRUWTBjbTVuZFdWeFpERXdaVXgwYTJJeE9WaEhPVXRoU1ROU1psaE9UVFZhUlc1Mk56Z3hUM1JVY3poSWVuQXhOQzlPVTJVMWNWaG9ZazFoSzBrMGJ6SXpNalpPTkRnMFNtaFZVazUwVUZwUmIweHljM2xrVjBoeE5tOTBlbFJNVWpSNU5uY3dXVmMzTjFsUWVUazRXVlZZTkN0aVQybE1iSHBpZGpOT2VsYzVkbTVxWmtoaGNtWmtjMWg2VXpsaGMzVnliaTkzYnprMVdqWmxWemhTU0VaS2QyeEVkMXBWU2xwamRVZEdjakZuVGtkTk9GcFRORlZHVWk4MFVuaDVlbkpLWVRaV1RYaHFjVkp3YW5CSVVFa3dXbXB2YUdOaFEyZFlSM1Z0V1hjM1RXNXdVRnBVYzJoRlNEazJUbkJ0WkcxQlZuaE1TRzlGZGxRNE9VNVNaSFFyUWtadFVIQkllR1J0WmtveGJGTXljMkZ0UTNCdlNrMW9ObEZ0YlVOQ2NHWkpNMjh3WkVWWGJVUkpRMWxoYkdwbmMwbEJhamR5ZDJ4YWVtSkJhRFF5ZHpKQlVVeExTWFpuYURoM1YxVk9Va3BDVEdScU1YTklRME5CYjFkTGFrUjBXRlZ4VWpNd1VIaFdkMUpZZDFJMGFsTk9URWhLUzNKTGJGUTJiVFIyUXpKNFpUWlFjSHBxVEVWak5EVjVabXhhTjJ4bmQyOW5MMFk1WlVkSlVHaDZWblozVkRoNGJFSXdjR1ZXUTNrNVdIUnNNMkpJUkdFeGVteHdkR1JpTTJaT1pEQllXR0l4T1VGSkszUmlUMVV3Y25OSWNrWm9aRUpZV0hkb1YySTJPWEZ5TUVZclYxbFBNV0kxUW10cUt6bFFlQ3R4VUVjNU9VSTFVSEJ0Vm5NclR5OTRhRmQ2TWpGM1oxcFlZMUY1V0VSdFIwUTFUMjkzZUZGbWRXOWhSMjl4UW1NMWJXWlhXVGQ0U2xkMVRVaEZja2wwYjFwTGJVVTFha2RvVjNOMVFreFdlR3czV21ST05qSklWVU41VjNKM1dFRTNabU13WTFaSmQyRTFjbWxIVDI1bWIyTTNaMjFsUlhkTFNsaFJaM0ZTTkZRM1NUQktVVTlaYnpsMmRtMWFSblZTVWxNdmNpOVdXbEJ5VWtwUFRIazRRWEZ4TW5Wbk1XUk5kR295VmpSWWFXNHllVmRpT1haSlpUUTRVbGhhU0VWQ2MyaFlSMFJvWkhVMVZFSXZaMGR3TDJ3NFVGazNjbUpJUkVrNWVVSlpPWGxNWTBkVldsRjNLMjVFUVN0a1dVWnBORWg0WVdNMFRtb3ZUemhJV0U5VlJpdGxiV1pFVlVJMGRrZDNVVGRDWldkR1ZFUkZjekZ5VkRaV2JHcFZTVGx0Ym5VeFMyc3JSa0pqUmpoSFRubE9aVmwxU2pORVR5czFNSGcwTkdNMGR6UTJkVkpQYm1kRU1EazJTV2huTVcxUFEybFdNME4yVlhOM1RXWldUbFJqZUc5RldHcEZlVzlHWW1ZMWNXTndUVVJYV0NzeE1GUjJjbVJKVWlzNE1YcHBaRFJCUkd4VE4xaHJUMW96WjFCTlVVZG1WalpoYjNZeFQwcDNUMUJITkV4M1JFUlJXVEIzWVV4MllrUnZaMHROZFdSRWNscEpRbTR3ZFhCNGEwMU5hRFJTTUU1Q2FXNVZObUkwUjJwSlJWTkNhVzFHZVhoQlRIVjVWbWx2TW1nNGFVUjZRbFZXZGpGQmNuQkxWbEJwYVZONWFXOW1ZVTFVYVZBeVIxSTNRWGszY2tSd2IzbGFRMVZrTkRScE1FUnpaak42WTBwc1RVSmhUV0p6YVVVd2RqQjNZVk4yVGtOSmMxWm5NM1ZWTHpScGMyUXhWRkVyZFVSek1tNVJUekJ1TlZFd1NHZERUVXhUUkRaamNuSXJibk4wYkhaR0wxZG9lU3RsSzBkU1dISnJkazFNYmtvNU1VODVlV2hxUVRBNWJVOVFiMDVuZGpKWVpFTldXRTVDWXpFeE5HUjJZalIyYjNwSVNHUjZiMmgxV2pGVE0yMHhVSFF2YWtsb1RGcDZaRGxyWWpOV2VYcGpiMjQ1THpReVdtdFliWEJqZGxOT1RHRXlSMUJ2UVZWRFpHTkROV2cxYTJ0T1RHRlhVbWg0V1dWMkswWTBaa1JOUzB4UFJtUjZlbWhCWW10b1RFVjFaV3RTVjJwd1NTdHJXR1ZFWTB4MVowRkNSbEUwVTBZMFYwbEpUM1U0Vkc5S1RIZHNOWGRaTkdKSlNVVTNlSEprTmt3MlVVOUNZME1yYmpOTFExWnpXVUpCVGtNMU1raFhRMnBvUzJGbVdYWkZiM1pXVDBsaFpuVlFWekZhYTIxd1pYTTFNbmg2V25KQlduUnVRVlprV2tod1ZWcENlaloyT0ZGNWJIRTFhQzlSZUM5RlVFRm9XR3BDVVRjd1VubE9SRTF5Um5SUFdXSmFiR1JzTmtSeGJsUTNXbkpOWkd0bVYwMTVZMmhGWW1zNVprVk1SbTU0Y0c1UmRtOWtNSEJpT1RjNGIwNTJSazUxTkRKVmRVZ3dWWGswVTI5TWVXVkNPVXBFVUdod1ZERTBSQzlDVEdJNFFraFViRTFOTTI5VU15c3ZNaXRsTjNSQmJEWTVNamRtTkZkMk9VSTNjVWhuU1hoUEx5OHhaWGcxWTBvd1JqRjNMMEZrVW5CalJpdEZPVzVuVEN0RFJuY3ZWRTVYV0hkWVZVcE9jbmRMY21kemNEUkVhMGxQU2sxcFNYcDRPRkF3V0hJeFVsUkhRbHBJWlRWU1ZIaEhXRU01UTJWc1F6UkRWbmQyV2xsRFdHaFJRbEF3Y0dSYU9WVndSMU1yYlhORk5tNDJSMVZzU1ZSQk5XNVNURzVVUlhGTGFYbE1aRTR4UzBGeEwyaExZbTByYlU5R01GTXJOVFZrVFdaQlpuQTNjVGhKYW1FclMxUTNPRTlGVmtSM1JUUlFWM0ozVWlzMU9WcDNabGxXVG1JM09GTjNiamxGTTBRNVpHRnhaVUU1WmxCM1dGVk9XRVE1Y25jMUwwNTVUVkJXUzFodVRYb3ZTbmxrYUhGemMwcE5aelZxUW1WUGMyaEJXQ3RVVmlzdk1rMU9LM2x1WjNsRE1GRkVabXhHVVhwd2NGVm1PVlUzZW1OQ1dscHNhV2RHYUZoVVdVdEViSHAxV2tsSmMwZGFSR3R2TlVGMWR6VkVaMEZqV2xnNVp6RkZRMDVvVXl0WGRtUmFOM0J1VUVSR2NGVlZTM281WWxJeFUyRnZOblI2YlhWeWNubHljbkozSzJSdlRpdHBOVFp1TTNaWVpEaHBNWE5wZUhJelVrNVdOMWs1U201TmVraEhiM1Z5YlcxT1UyTXdXRUZtVVZKeVkwTnlRM2sxTVVOTFVEUklORkJ4WWtremRtUlVjVlJyZWpWelJqbHNVa1I2UjJwWGNFaFdjelphTjJsallWSXhTM2g2S3pkR1RXNDBaMVZwU1dsbVQwOVlhSE16U0dOa2IyUkZNV05oVW05WVJ6Qnhkblp6ZGpkUWEwbFhRV2hSUTFabll6SnNTVFJoWTA5a1IzbDRNM2s1U1RWMlNDOUxTUzlhTlVsNE5FUnpRamx6Vkdka1MwcHZXRlJ0ZVRaSVRVZHZXRlJsTUZONFdIUkZhbkpSVldocWQyWnZPVmxDZEROelEwcFJSQ3RQT1VkSk5XTk9LelZNVGxWeVRVSlBXSHB6YzFaRFdHMDFZbEIzZVUxdmJtdEhTa3hrVW5adWNGQnJjR2hTVm1NMVZVWkRjVWhTWjI5ak1IbExSbFpGTTJwVWJXdEdLeTl6UWxwdE9GRmtVWFJUY21WWVdrcEdUbXQ1VjJsc05sWTNWa2RUYWxOUFVYVTBNMkZvVUdWRWIwOHhWRGs0Um1odmJGVk9iSEk0Ym5OUVdVTkxMMEZvZERKNFZGRlNRbVo1T1UxaFV6bDNVbW93WVRCaGVUUXdibXhMV1RKcGVsUTFWSGxEVG1ab2JqTkZZazAwZVhkNFlUUmFTRFYzYW5wS05HOVBUelZXYTI5WE9GbHVaMWxUUlc5VVppOUZXRFZpVVVkcVZDdFhiakZEZERoelJraDVla05RY1cxVFptOTBabFJMWWpWdmIyWnJja05yVml0YVVVVTJWalZEUmtadFFXcFFRbWhIV0ZJM1NsQjNXSEFyUm1RdmJETlRUSFpEZG1sclRIUkVTamxaY1RKRGVEaHlkbXRJTHpGSGRucDROelZvTDNwU2NqaGhOemxxTDNWMlZ6Uk1MeXRQSzJFdloxTm9MMEpKWlRFeGRFTk9ObVJ0WWpRNFoyaE9aMjUyYkZWRFpreHhlVE5GYW5oMlJuQTBUR2RZZVdJd00xTXlXa3RQZWtoRlpVbFBiVWxNT0ZGNWVHeGhaek5UYlc1T2QwbGpOMEZpVVV4S1VpdEJRMUF3VWpORGJsSjFVVTR2TUM5aGFFRkljMGhUUnpacmRGbENVR2M0UVVoSVRURkJZa3N2VUhCQksyZDRhM2h2ZUhSdlNGcDZVa3RoTTNNdlFWSlJZa0paY0djMU56WnRRbkJ5VTBkelowUm1TbTlsYkRkemFuWlRZV3NyVlhOb2JFVTNTemhEWVZGWlpIUnFlVEpDUzNrMlFVUXpSWGxRVEZsTmRYRjNkelpIYUZaclQwRm9hekpETjBsWlNEQk5SMXB5VkdVMVlURk5UVEZ3WVdaV01GQndRM05QVWxCTWEyVXZVVm80YVZkemJ6bEViVFJaUld0YVZ6ZElhVE5uTTFOS1UwZEVhbWQ1U3pGWVRDOTJNRlV4ZDBaWGNEVm5iblYzWjFkdmJUSkNiM3BaTWxsdlVuSmtPVGhXZGxOUFVFeFhPWGxMTlUwMldIVk9WRFF6TmpkdEt6VXdOVWd5WjA0eGVXdzNkMGhqUzI1aVdTdHpVR0o0YTJFNVpuWmpLMDVUTkU0d2FVNUVUekJrZDJSMVZFZFdUR05EYkRsUFJFUlhjMkZCTTFoUWQzRXpURFZZU0Zodk1pdExVWE0yZUdKTU5GRlhjRFpHVjBsa1duSlFlR3RuYkhGdGJHUTNWMlZsYjNvcksyRnZUbmhvVVRSWmQySllhVFJYU2pKT1RGZHFTVlkyT1cwd1NXSjZjVVJ5TUVoT1ZETklOalZtU0dOSU4yMVhiVmxRUVdvMk9GVlFkMVJYTkdJemJUZ3ZhWEprTTNSWVptSnFUM0ZvYldoSVl6Vm5PVk5pWm1kclQxVklhR0pKYVdnNFIyd3ZRMEl2ZWl0dWVWVkhMMlZJWjI1b2QyNUJTMUJzVFM5T05HcFlNMjlCVFVzMlpVWlJZMXB4SzNCaE9FaFFPVlJpTVZjelJFODVkVGRFTVc0elIyVTRTa05NVlVOM2Mza3hURUZKYzNZdk1ESk5ia1JLT0ZBM00zSTJOM1JhVUhKQldHUnBkMkYwYW5ka1FYaEhWMHRCVjI5bFNtSkJkMmN4WkVOVVZHSTRjMGhoVkVKNWJGbFFNbVZUWlVKaGREQTRkV3BWYXpWTGJpOWpUMXAyYldGUFVYUjJXbXRaT1Uxd2QwNHpZV281ZG1KaVVXWjJkMWRuWld4dE1YSk9SRmxtUkU5MFVFNXRORVJpV21JNU4ySlpkVXN5TjNSQlUwMUtlVFZ4WVZsV1VHaDVWV0pVWTJ4T1prOHdSV00yWWxoMlFUWXlUbmh6WVVSclQyZ3lNRWR4TTJSdVZWUXZWbG8zVjA1dlJXOVRWVzVITlhOQ1JrdHBiREU1UjNaUWRHeHZRbWN2VjJkbE5TdGtXR2xxVDNWcllUQTFWRkExTlRoVFprbFBaMlpLVVhKdFVFdE1Sa3A0U0cwemJsVTNRekJCVTNaSFpVRXlTR0Z4ZDA5eWRWQmpMMHBFUVd4Nk5rNU9VRXh4VGxJd01EaDFjakpVYlZsUmJXOWxSbEZqYVVWNFIzcFhWakZDTTJwb2VrTmtRMEpOWkdobmJXdFZaVEpWU2pScllURnZhVkJGUTNORlRTODNURXB6U1ROQmVWQlhhRlpWVVhoWWNrTkhPWHBNYnpsTk9FTnFLM2xWWW1wSEwxWTNaMlJUUjFreVJYSmhTR2xDWm5ZeGIxaE1kWGt5UlZrM1QzcHROVXgwT1ZoWGFqTmxNRWd5Y1ROWFlYY3haRkpXUTJSdlIwSldkVVZzU2tSemFGcEpaRFZXWm5VcmJtMDBZaTlMUzBKc2QwaEVWR0pLVFVoYVRFdE9SRkJFYzBsQ1drUlJZU3RHTURadFRYcFJUVFZZV1VjdlZUVm9RblpHVTIxTFJHMWFZWGxRYjJkTVNtaEVkazB5VUU1aFJEQk9VbVJDY1U1UFdWbEpibnBqWTBRM1JrSlljMHBQY3pkNVZVRnRUa3BLZG1Kb1MyVkRhRGRNTmxGck5qQjZja2hxZGtGWVRWQlFUMWxsTlZoT1owVjBhbkJrVkhOYVlXOTRXR3AzUnpOa1JITm9hVTVsUVVkU2QxTjJXU3Q0ZHpBMk1YZHJhR1JuVlcxSFowaG1lWEJOU2pSdFkzTjJaazUzUWtzeE4wSm9iMU53ZVRoMVJURTJMMHBMYzBKcVJFRlhkVUZCY3k5MlRVRjZaamh0YTJwU1VsbHFNbUpQVVhaWFJHazFNbFpEZG14cWRGaGFTbkZVTW01WVRrbFdXRlpHWmxaSVVHeFlWa2hrTDJodVdtdHhTREJUZEhaR1RuRTJjVW95Y1hkNlUybFlkRUZZYm1vM09YaHVRM1owYVVkdmRFMDFURkJqWjNaUFNIQXpRa1Z5Vm1KSk9ISnhiVnA0UlZObWJqRTJWV3BLTldodVRrZ3ZVRXRGTlZoV1RuZGlaVWQyYWtvMFFWaFdja2RVU2xWRVVXSjJTRXhwZDI5ck5USmhXSFpTVVRKaVptMUhZVm96S3lzME1VOUVTMWRHYzIxcGRqZGtWVWh3TlhkeGEyRjJUaTloVWtKa2VHTTRSMkkzWkRselQyVTVVRmwwWWpRMlltVnBTMnd6VTJGTkwzUXpPVXByT0RoV1lrcHhXSHBWTVhoNGN6ZEdSVFIyU0hWaU5WSjZhbGhIYWxodk5HbzFabFJJTkRsd1NtZEVTelZqTVhndldXRTNLMmN6ZG1wTlZUTjBhMWt5ZEhRMVNHdEdNVGwzYW5Wbk5UZEJMMGxWYVhWSVZuWlROazAwWm1WUFVFRTNRWFp1WlhFM2RDdEZlR0prY0dGbGExTlNlWFJQWkdKWU1pdGtaRlZTZWs1emVtNVNNMDh5V2t0SVJUZGxlVkEyYURCNGVtVklXWGRJUWpoWlVGUjFRVTlFZFdwbk1WRmtlak1yZWpWVE5UVTRZbW95Y0hFM01uQndNMDV6V25KWGVVc3hURlo2Y2xOR1VqZE1TMW93ZUd0bmNWUnJOMk5LVTJNME16SlRUWEJJSzNZeFUyUklhekU1ZVhGWVUyMDBOMlZITm5adVVtUTRaSFZxWkRCbGFXaHlZalU0Y0N0WEx6Tk5hR0p5WWxwU09WVjJWbVV4Y1V4eVZFWkhNM0Z0WWtZNGRHMU1aMnh6V0RscE1qSmpNMmhpVkRsRU5HczBjemRKZUhBelkxaDJkUzlxZEVsU05HaG5NMFpsV2s5MmMxTTVaVUZ2VFM4eVZ6QkJkMDVXUTB4WVFXbHJSRE4zVjNGUVZtUkNTbkEyUTFSTWJYZFdjbHAyTURJdlZIUnpZV2dyWkRCNWVrbzJUMEl5TjBVdlluVTJUbTFJZFRWUWJuWlZWRWhEU0ZKNVRHMXJZV29yVjBWNmFucEpTamRMUnpSdFNXZERjaTh6UkZWbVNWRmlTa05PYlUxeGIyWnFWMnhqVjFoQ056UXJZa1JGWms1b04zTnFVbkZJYlZGSE0wWkllazgyYjI1dmNIQjRkR0ZYV1ZSb2FVaHZOM0ZTTWt0aFdURnNkMFF6VDBSNk1HWk5lakJtTVZwRmQzb3JiR3hvSzFwWVFtazBUV016YURCMFVFUkVWRzFqWjNKMlIyODBaU3R2ZEV0dVZub3pXRlpxTDA1eU5EbGxUeTlNTm5WbGJ6STFkbGRJUWtoRGFYZDZWblJDTkRkdWRVbzBiMjlNY0RKaGJFTlZVRkkxV2pKS2NXNVhlbGhaYm1sNWFtNUVjRlpQU2poeGIySjFPVGRoVGxNNU5WWXpkRXhIZVRsMmFWcFRNMHhITldaTFVEUjVWVlp2T1ZvdmNreDVhVlk0TkRBek1WUTVXSHBsTmxBMGVuRnplV2RDZDNabWVWcFRMM041T0RWV00ySk1aSFZEVGxZM1pVVlRibloxUjA1a2RFaEpha3BGWTAxUWRGTk9aVEphTTBaT0sxUTJiV1ZOYkVKMmJqSllaR1oyZGxoNVVXbG9aV0p2TWxWWGVtNDNhMk5WVkc1TmRrUklXREFyTTJKR2JUQTRNbmx1TldKT09UQmFjbVJ1TURRNWRtWklMeXMzTkc1aGNtOXViMGR5U0ZaamVGVldTbk4yYVU1bE0yaEJjR0l4YWxsbWNuWTBhamhXVm5kUFpDdE5ZbWxSWXpKbU4weDNaR281V0RGTVNscFlXSGdyVGxaVVdHVnliWFEzWmtkT0wxZEdaRzVYZUZoVlVGSmhkVWRaZVZWcVV5dFZNVTQ1Y1hWMFl6Rk9URVpuVjBSUmRIUnJaa3hQVHl0MWFUVlVNR1p6TlN0akswOWpWRWcwWlM5WVEzRnlabXRqV25nd01UTmpaRkEzYm1aSWRGaGFTSFJZV1VFM1VIWkNjREprUjJ4dmRreHlLeXROVmtSWVkzSkhkRFpZZUhoemRHdFZXVXhhZURKUFZtOTZSV2x2TkhRMlVYQm5ka3h1WVdSRWJqTm5VVTVHT0dkM1VHUnBTVFZsVlV4cFJuSTFMMmhoU0VzMllYZHlXbEZhYUZwQ1VtVktaM0IyUkdzdlFUUnBWV2hRVFV0amRFZzRVMEpJYVhaaE9YcHZVMjQwVlhrNFFXTk1OVGhxWjBGTVEzZzNTRW81VlUxU2JVZGhSREEyUW1Sc2JEUnBiSEk1U1RadlJrWlRUMnB2WkUxTFJqSXlXVGsxU0ZORFFsTjBSbFV4WjI1aVIwdGpWRFkxUzAxSmIza3JOVVJOWkRWdVMxaGphMWg0Ym5WWlV6QnFlVzB4WTFkTWNtWXpTbE5wU3k5bk4xcEhhR1lyZGpCSWR6TjVRbFoyTUZCWE16VmphblYxWWxSdGIxTTJORXhSYVd0a1kwUTNhbFEyTURaeFJYUjFXakI2Y2l0d09EZ3ZWMjVXWWpoWFltOUNjbVozWTBGalZVUkhOSEZvVWxFclZVZE9jbmRSUTJ4SVYzZzNiemx4VG04eFpqRXJSRXBHY1ZwelNsSlRaVzEyY0dOd1dFOHJPVXhGUjIxYVNVMHZMMEZIZVVWWFREUTlKeWtwS1NrPScpLmRlY29kZSgpKQ==').decode())
+import os, requests, json, time, sys, random
+from rich.console import Console
+from rich.prompt import Prompt
+from pystyle import Colors, Colorate
+
+# ==========================================
+# 1. ТОХИРГОО (API & FIREBASE)
+# ==========================================
+API_BASE_URL = "https://kayzennv3.squareweb.app/api"
+API_KEY = "APIKEY38"
+FIREBASE_URL = "https://telmunn-79711-default-rtdb.firebaseio.com/users.json"
+ADMIN_KEY = "0615"
+__CHANNEL__ = "TarganJackChannel"
+
+console = Console()
+
+# ==========================================
+# 2. CPMApiClient (ЧИНИЙ ӨГСӨН БҮТЦЭЭР)
+# ==========================================
+class CPMApiClient:
+    def __init__(self):
+        self.auth_token = None
+
+    def login(self, email, password):
+        payload = {"account_email": email, "account_password": password}
+        try:
+            res = requests.post(f"{API_BASE_URL}/account_login", params={"api_key": API_KEY}, json=payload).json()
+            msg = str(res.get('message', '')).upper()
+            if res.get('ok') or res.get('error') == 0 or msg == "SUCCESSFUL":
+                data = res.get('data', {})
+                self.auth_token = data.get('auth') if data.get('auth') else res.get('auth')
+                return 0, "SUCCESSFUL"
+            return 1, res.get('message', 'Login Failed')
+        except: return 1, "Connection Error"
+
+    def set_rank(self, auth):
+        try:
+            payload = {"account_auth": auth}
+            res = requests.post(f"{API_BASE_URL}/set_rank", params={"api_key": API_KEY}, json=payload).json()
+            return res.get('ok') or res.get('error') == 0
+        except: return False
+
+    def change_email(self, auth, new_email):
+        try:
+            payload = {"account_auth": auth, "new_email": new_email}
+            res = requests.post(f"{API_BASE_URL}/change_email", params={"api_key": API_KEY}, json=payload).json()
+            return res.get('ok') or res.get('error') == 0
+        except: return False
+
+    def change_password(self, auth, new_password):
+        try:
+            payload = {"account_auth": auth, "new_password": new_password}
+            res = requests.post(f"{API_BASE_URL}/change_password", params={"api_key": API_KEY}, json=payload).json()
+            return res.get('ok') or res.get('error') == 0
+        except: return False
+
+    def register(self, email, password):
+        try:
+            payload = {"account_email": email, "account_password": password}
+            res = requests.post(f"{API_BASE_URL}/account_register", params={"api_key": API_KEY}, json=payload).json()
+            return res.get('ok') or res.get('error') == 0
+        except: return False
+
+# ==========================================
+# 3. ТУСЛАХ ФУНКЦҮҮД
+# ==========================================
+def load_db():
+    try: return requests.get(FIREBASE_URL, timeout=10).json()
+    except: return {}
+
+def update_balance(user_id, new_balance):
+    url = f"https://telmunn-79711-default-rtdb.firebaseio.com/users/{user_id}.json"
+    requests.patch(url, json={"balance": new_balance})
+
+def banner():
+    os.system('cls' if os.name == 'nt' else 'clear')
+    brand = "Car Parking Multiplayer 1 Tool"
+    print(Colorate.Horizontal(Colors.rainbow, brand.center(60)))
+    print(Colorate.Horizontal(Colors.rainbow, '='*60))
+    print(Colorate.Horizontal(Colors.rainbow, ' 𝐏𝐋𝐄𝐀𝐒𝐄 𝐋𝐎𝐆𝐎𝐔𝐓 𝐅𝐑𝐎𝐌 𝐂𝐏𝐌 𝐁𝐄𝐅𝐎𝐑𝐄 𝐔𝐒𝐈𝐍𝐆 𝐓𝐇𝐈𝐒 𝐓𝐎𝐎𝐋'.center(60)))
+    print(Colorate.Horizontal(Colors.rainbow, ' 𝐒𝐇𝐀𝐑𝐈𝐍𝐆 𝐓𝐇𝐄 𝐀𝐂𝐂𝐄𝐒𝐒 𝐊𝐄𝐘 𝐈𝐒 𝐍𝐎𝐓 𝐀𝐋𝐋𝐎𝐖𝐄𝐃 𝐀𝐍𝐃 𝐖𝐈𝐋𝐋 𝐁𝐄 𝐁𝐋𝐎𝐂𝐊𝐄𝐃'.center(60)))
+    print(Colorate.Horizontal(Colors.rainbow, f' 𝐓𝐞𝐥𝐞𝐠𝐫𝐚𝐦: @{__CHANNEL__}'.center(60)))
+    print(Colorate.Horizontal(Colors.rainbow, '='*60))
+
+# ==========================================
+# 4. ҮНДСЭН ПРОГРАМ
+# ==========================================
+def main():
+    while True:
+        banner()
+        acc_email = Prompt.ask("[bold white][?] Account Email[/bold white]")
+        acc_password = Prompt.ask("[bold white][?] Account Password[/bold white]")
+        acc_key = Prompt.ask("[bold white][?] Access Key[/bold white]")
+
+        # 1. Шалгалт (Key & Block)
+        db = load_db()
+        user_id_ref, found_user = None, None
+        is_unlimited = (acc_key == ADMIN_KEY)
+
+        if not is_unlimited:
+            for uid, data in db.items():
+                if str(data.get('key')) == str(acc_key):
+                    user_id_ref, found_user = uid, data
+                    break
+
+        # Хэрэв блоктой эсвэл Key байхгүй бол (Чиний хүссэн алдааны мессеж)
+        if not is_unlimited and (not found_user or found_user.get('is_blocked')):
+            banner()
+            print(f"[?] Account Email    : {acc_email}")
+            print(f"[?] Account Password : {acc_password}")
+            print(f"[?] Access Key       : {acc_key}\n")
+            print(Colorate.Horizontal(Colors.red_to_white, "[✘] Trying to Login: TRY AGAIN."))
+            print(Colorate.Horizontal(Colors.red_to_white, "[!] Note: make sure you filled out the fields !"))
+            time.sleep(4); continue
+
+        # 2. API Login
+        cpm = CPMApiClient()
+        login_res, login_msg = cpm.login(acc_email, acc_password)
+
+        if login_res != 0:
+            banner()
+            print(f"[?] Account Email    : {acc_email}")
+            print(f"[?] Account Password : {acc_password}")
+            print(f"[?] Access Key       : {acc_key}\n")
+            print(Colorate.Horizontal(Colors.red_to_white, f"[✘] Trying to Login: TRY AGAIN."))
+            print(Colorate.Horizontal(Colors.red_to_white, f"[!] Note: {login_msg} !"))
+            time.sleep(4); continue
+        
+        print(Colorate.Horizontal(Colors.green_to_white, "[√] Trying to Login: SUCCESSFUL.")); time.sleep(1)
+
+        # 3. Үйлчилгээний цэс
+        while True:
+            banner()
+            # Баланс шинэчлэх
+            db = load_db()
+            if not is_unlimited: found_user = db.get(user_id_ref, {})
+            current_bal = 999999999 if is_unlimited else int(found_user.get('balance', 0))
+            bal_display = "Unlimited" if is_unlimited else f"{current_bal:,}"
+
+            print(f"Account Email    : {acc_email}")
+            print(f"Account password : {acc_password}")
+            print(f"Balance          : {bal_display}")
+            print(f"Access key       : {acc_key}")
+            print(Colorate.Horizontal(Colors.rainbow, '='*60))
+
+            # Цэсийн жагсаалт (Jack загвар)
+            print(Colorate.Horizontal(Colors.rainbow, f"{{01}}: SET RANK".ljust(35) + "20.5K"))
+            print(Colorate.Horizontal(Colors.rainbow, f"{{02}}: CHANGE EMAIL".ljust(35) + "15.5K"))
+            print(Colorate.Horizontal(Colors.rainbow, f"{{03}}: CHANGE PASSWORD".ljust(35) + "10.0K"))
+            print(Colorate.Horizontal(Colors.rainbow, f"{{04}}: REGISTER".ljust(35) + "1.0K"))
+            print(Colorate.Horizontal(Colors.rainbow, f"{{05}}: LOGOUT"))
+            print(Colorate.Horizontal(Colors.rainbow, f"{{06}}: EXIT"))
+            print(Colorate.Horizontal(Colors.rainbow, '='*60))
+
+            choice = Prompt.ask("\n[bold yellow][?] Select[/bold yellow]", choices=["1","2","3","4","5","6","01","02","03","04","05","06"])
+
+            if choice in ["5", "05"]: break
+            if choice in ["6", "06"]: sys.exit()
+
+            costs = {"01": 20500, "1": 20500, "02": 15500, "2": 15500, "03": 10000, "3": 10000, "04": 1000, "4": 1000}
+            clean_choice = choice.zfill(2) if len(choice) == 1 else choice
+            cost = costs.get(clean_choice, 0)
+
+            if current_bal >= cost:
+                success = False
+                if clean_choice == "01": # Rank
+                    if cpm.set_rank(cpm.auth_token): success = True
+                elif clean_choice == "02": # Email
+                    new_e = Prompt.ask("[?] Enter New Email")
+                    if cpm.change_email(cpm.auth_token, new_e): acc_email = new_e; success = True
+                elif clean_choice == "03": # Pass
+                    new_p = Prompt.ask("[?] Enter New Password")
+                    if cpm.change_password(cpm.auth_token, new_p): acc_password = new_p; success = True
+                elif clean_choice == "04": # Reg
+                    re, rp = Prompt.ask("[?] Reg Email"), Prompt.ask("[?] Reg Pass")
+                    if cpm.register(re, rp): success = True
+
+                if success:
+                    if not is_unlimited:
+                        update_balance(user_id_ref, current_bal - cost)
+                    print(Colorate.Horizontal(Colors.green_to_white, "SUCCESSFUL (√)"))
+                    if Prompt.ask("[?] Do You want to Exit ?", choices=["y", "n"], default="n") == "y":
+                        print(Colorate.Horizontal(Colors.rainbow, "Thank you for using SEREK69 Tool!")); sys.exit()
+                else:
+                    print(Colorate.Horizontal(Colors.red_to_white, "FAILED (✘)"))
+            else:
+                print(Colorate.Horizontal(Colors.red_to_white, "INSUFFICIENT BALANCE!"))
+            time.sleep(2)
+
+if __name__ == "__main__":
+    try: main()
+    except KeyboardInterrupt: sys.exit()
+
